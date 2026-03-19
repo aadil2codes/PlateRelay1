@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlateRelay - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="brand cursor-pointer" onclick="window.location.href='index.html'">
+                <div class="brand-logo">P</div>
+                <span class="brand-text">PlateRelay</span>
+            </div>
+            <div class="nav-links">
+                <button class="nav-btn-link" onclick="window.location.href='index.html'">Home</button>
+                <button class="btn btn-primary ml-4" onclick="window.location.href='register.html'">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="app">
+        <main class="view">
+            <div class="auth-container mt-12 slide-up">
+                <div class="auth-box">
+                    <div class="auth-header">
+                        <h2>Welcome back</h2>
+                        <p class="text-muted mt-1">Log in to your account to continue</p>
+                    </div>
+
+                    <div id="auth-error" class="alert-error hidden"></div>
+
+                    <form id="login-form">
+                        <div class="form-group mb-4">
+                            <label>Email address</label>
+                            <input type="email" id="login-email" required placeholder="you@example.com">
+                        </div>
+
+                        <div class="form-group mb-6">
+                            <label>Password</label>
+                            <input type="password" id="login-password" required placeholder="••••••••" minlength="6">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-full" id="login-submit-btn">Log In</button>
+                    </form>
+
+                    <div class="text-center mt-6">
+                        <p class="text-muted" style="font-size: 0.9rem;">Don't have an account? <a href="register.html"
+                                class="text-primary" style="font-weight: 600; text-decoration: none;">Sign Up here</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="login.js"></script>
+</body>
+
+</html>

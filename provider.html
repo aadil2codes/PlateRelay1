@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlateRelay - Provider Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="brand cursor-pointer" onclick="window.location.href='index.html'">
+                <div class="brand-logo">P</div>
+                <span class="brand-text">PlateRelay</span>
+            </div>
+            <div class="nav-links">
+                <button class="nav-btn-link" onclick="window.location.href='index.html'">Home</button>
+                <button class="nav-btn-link" onclick="window.location.href='provider.html'">Dashboard</button>
+                <div class="role-badge" id="nav-role-badge"><i class="fa-solid fa-store"></i> <span
+                        id="nav-role-text">Food Provider</span></div>
+                <button class="icon-btn text-danger ml-2" id="logout-btn" title="Log out"><i
+                        class="fa-solid fa-right-from-bracket"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="app">
+        <main class="view">
+            <div class="dashboard-grid mt-8">
+                <div class="dashboard-sidebar">
+                    <div class="card sticky">
+                        <h2 class="card-title"><i class="fa-solid fa-circle-plus text-primary"></i> Post Surplus Food
+                        </h2>
+
+                        <form id="post-donation-form" class="mt-4">
+                            <div class="form-group mb-4">
+                                <label>Provider Contact Name <span class="text-danger">*</span></label>
+                                <input type="text" id="post-provider-name" required placeholder="e.g. John Doe">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label>Mobile Number <span class="text-danger">*</span></label>
+                                <input type="tel" id="post-mobile-number" required placeholder="e.g. 9876543210" pattern="[0-9]{10}">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label>Organization / Event Name (Optional)</label>
+                                <input type="text" id="post-org-name" placeholder="e.g. Grand Hotel / Sharma Wedding">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label>Food Item(s) <span class="text-danger">*</span></label>
+                                <input type="text" id="post-food-name" required placeholder="e.g. 50 Roti, Dal, Rice">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label>Quantity (Servings)</label>
+                                <input type="text" id="post-quantity" required placeholder="e.g. Enough for 20 people">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label>Pickup Location</label>
+                                <div style="display: flex; gap: 8px;">
+                                    <input type="text" id="post-location" required placeholder="e.g. Block A Cafeteria"
+                                        style="flex-grow: 1;">
+                                    <button type="button" class="btn bg-base text-main shadow-sm" id="btn-get-location"
+                                        title="Use My Current Location">
+                                        <i class="fa-solid fa-location-crosshairs"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <!-- Interactive Map -->
+                                <div class="map-container mb-2"
+                                    style="height: 250px; width: 100%; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px -1px rgb(0 0 0 / 0.1);">
+                                    <div id="osm-map-mess" style="height: 100%; width: 100%;"></div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label>Available Until <span class="text-danger">*</span></label>
+                                <input type="time" id="post-time" required>
+                            </div>
+                            <div class="form-group mb-6">
+                                <label>Special Notes (Optional)</label>
+                                <textarea id="post-special-notes" rows="2" placeholder="e.g. Contains peanuts, Please bring empty containers" style="width: 100%; border-radius: 8px; border: 1px solid #cbd5e1; padding: 12px; font-family: inherit; font-size: 0.95rem; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='#cbd5e1'"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full" id="post-btn">Post Donation</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="dashboard-main">
+                    <h2 class="section-title mb-4">Your Listings</h2>
+                    <div id="provider-listings-container" class="listings-grid">
+                        <!-- Rendered dynamically -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Leaflet CSS and JS for Maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script type="module" src="provider.js"></script>
+</body>
+
+</html>

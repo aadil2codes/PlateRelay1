@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlateRelay - NGO Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="brand cursor-pointer" onclick="window.location.href='index.html'">
+                <div class="brand-logo">P</div>
+                <span class="brand-text">PlateRelay</span>
+            </div>
+            <div class="nav-links">
+                <button class="nav-btn-link" onclick="window.location.href='index.html'">Home</button>
+                <button class="nav-btn-link" onclick="window.location.href='ngo.html'">Dashboard</button>
+                <div class="role-badge" id="nav-role-badge"><i class="fa-solid fa-handshake-angle"></i> <span
+                        id="nav-role-text">NGO</span></div>
+                <button class="icon-btn text-danger ml-2" id="logout-btn" title="Log out"><i
+                        class="fa-solid fa-right-from-bracket"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="app">
+        <main class="view">
+            <div class="dashboard-header mt-8 mb-6">
+                <div>
+                    <h1 class="page-title">Available Surplus Food</h1>
+                    <p class="text-muted">Real-time listings from nearby Mess and Canteens.</p>
+                </div>
+                <div class="stat-badge bg-primary-light text-primary">
+                    <span id="ngo-listing-count">0</span> Active Listings
+                </div>
+            </div>
+
+            <!-- Map Area -->
+            <div class="map-container mb-8"
+                style="height: 400px; width: 100%; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);">
+                <div id="osm-map" style="height: 100%; width: 100%;"></div>
+            </div>
+
+            <!-- Location Notice -->
+            <div class="bg-base p-4 rounded-lg mb-8 border border-gray-200 shadow-sm flex align-center gap-4">
+                <i class="fa-solid fa-location-arrow text-primary" style="font-size: 1.5rem;"></i>
+                <div>
+                    <h3 class="font-bold text-main">Enable Location Services</h3>
+                    <p class="text-muted text-sm" style="margin: 0;">Allow location access in your browser to
+                        automatically see exactly how far away each Mess is from you in Kilometers.</p>
+                </div>
+            </div>
+
+            <!-- Available Listings Section -->
+            <div class="mb-12">
+                <div id="ngo-listings-container" class="listings-grid">
+                    <!-- Rendered dynamically -->
+                </div>
+            </div>
+            
+            <!-- Accepted Pickups Section -->
+            <div class="mb-12">
+                <div class="dashboard-header mb-6">
+                    <div>
+                        <h2 class="section-title">Your Accepted Pickups</h2>
+                        <p class="text-muted">Food donations you have committed to picking up.</p>
+                    </div>
+                </div>
+                <div id="ngo-accepted-container" class="listings-grid">
+                    <!-- Rendered dynamically -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Confirm Pickup Modal -->
+    <div id="confirm-modal" class="modal-backdrop hidden">
+        <div class="modal-content slide-up">
+            <div class="modal-header">
+                <h2>Confirm Food Pickup</h2>
+                <button class="icon-btn" id="close-modal-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <form id="confirm-pickup-form" class="mt-4">
+                <input type="hidden" id="modal-donation-id">
+                <input type="hidden" id="modal-provider-name">
+                <div class="form-group mb-4">
+                    <label>Volunteer Name <span class="text-danger">*</span></label>
+                    <input type="text" id="confirm-volunteer-name" required placeholder="Who is picking it up?">
+                </div>
+                <div class="form-group mb-4">
+                    <label>Contact Number <span class="text-danger">*</span></label>
+                    <input type="tel" id="confirm-contact" required placeholder="e.g. 9876543210" pattern="[0-9]{10}">
+                </div>
+                <div class="form-group mb-4">
+                    <label>Expected Pickup Time <span class="text-danger">*</span></label>
+                    <input type="time" id="confirm-time" required>
+                </div>
+                <div class="form-group mb-6">
+                    <label>Remarks / Notes (Optional)</label>
+                    <textarea id="confirm-remarks" rows="2" placeholder="e.g. Arriving in a white van" style="width: 100%; border-radius: 8px; border: 1px solid var(--border); padding: 12px; font-family: inherit; font-size: 0.95rem; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#3b82f6'" onblur="this.style.borderColor='var(--border)'"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-full" id="confirm-submit-btn">Confirm & Accept</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Leaflet CSS and JS for Maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script type="module" src="ngo.js"></script>
+</body>
+
+</html>

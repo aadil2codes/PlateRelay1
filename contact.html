@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlateRelay - Contact Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="landscaping.css">
+    <script src="motion.js"></script>
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        @media (min-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--text-main);
+            background: var(--bg-base);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar without "inverted" so it has a solid background immediately -->
+    <nav id="navbar" class="landscaping-nav">
+        <div class="nav-container">
+            <!-- Left: Logo -->
+            <div class="brand cursor-pointer" onclick="window.location.href='index.html'">
+                <div class="brand-logo" style="color: white; border-radius: 8px;">P</div>
+                <span class="brand-text">PlateRelay</span>
+            </div>
+            
+            <!-- Center: Links -->
+            <div class="desktop-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#mission" class="nav-link">About</a>
+                <a href="index.html#features" class="nav-link">Services</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+
+            <!-- Right: CTA & Hamburger -->
+            <div class="nav-actions">
+                <a href="login.html" class="nav-link hidden md:block" style="margin-right: 12px;">Log In</a>
+                <button class="btn btn-primary cta-btn" onclick="window.location.href='register.html'">Sign Up</button>
+                <button class="hamburger" id="mobile-menu-btn" aria-label="Toggle menu">
+                    <span class="hamburger-line top"></span>
+                    <span class="hamburger-line middle"></span>
+                    <span class="hamburger-line bottom"></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#mission" class="nav-link">About</a>
+                <a href="index.html#features" class="nav-link">Services</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+                <a href="login.html" class="nav-link" style="margin-top: 12px;">Log In</a>
+                <button class="btn btn-primary cta-btn" style="display: block; margin-top: 12px; width: 100%; max-width: 250px;" onclick="window.location.href='register.html'">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="app" style="padding-top: var(--nav-height);">
+        <main style="padding: 0;">
+            <div class="view">
+                
+                <!-- Contact Us Section -->
+                <section class="section-padding m-fade-up">
+                    <div class="section-header">
+                        <h2>Contact Us</h2>
+                        <p style="font-size: 1.15rem;">If you are a food provider, NGO, or organization interested in reducing food waste and supporting communities, we would love to hear from you.</p>
+                    </div>
+                    
+                    <div class="contact-grid m-stagger">
+                        
+                        <!-- Left Side: Information -->
+                        <div class="m-fade-up">
+                            <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 40px; color: var(--text-muted);">
+                                PlateRelay aims to build a strong network of food providers and NGOs working together to ensure surplus food reaches people in need. If you have questions, suggestions, or want to collaborate with us, feel free to get in touch.
+                            </p>
+                            
+                            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; color: var(--text-main); margin-bottom: 24px;">Contact Information</h3>
+                            
+                            <div style="margin-bottom: 24px; display: flex; align-items: flex-start; gap: 16px;">
+                                <div style="width: 48px; height: 48px; border-radius: 12px; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+                                    <i class="fa-regular fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--text-main); font-size: 1.1rem; margin-bottom: 4px; font-weight: 600;">Email</h4>
+                                    <p style="color: var(--text-muted);">support@platerelay.org</p>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 24px; display: flex; align-items: flex-start; gap: 16px;">
+                                <div style="width: 48px; height: 48px; border-radius: 12px; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--text-main); font-size: 1.1rem; margin-bottom: 4px; font-weight: 600;">Phone</h4>
+                                    <p style="color: var(--text-muted);">+91 XXXXX XXXXX</p>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 24px; display: flex; align-items: flex-start; gap: 16px;">
+                                <div style="width: 48px; height: 48px; border-radius: 12px; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 style="color: var(--text-main); font-size: 1.1rem; margin-bottom: 4px; font-weight: 600;">Location</h4>
+                                    <p style="color: var(--text-muted);">India</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Side: Contact Form -->
+                        <div class="m-fade-up" style="background: var(--bg-surface); padding: 40px; border-radius: 20px; box-shadow: var(--shadow-sm); border: 1px solid var(--border);">
+                            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.5rem; color: var(--text-main); margin-bottom: 12px;">Get In Touch</h3>
+                            <p style="color: var(--text-muted); margin-bottom: 30px;">Use the form below to send us a message.</p>
+                            
+                            <form>
+                                <div class="form-group">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-input" placeholder="Your name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-input" placeholder="Your email address">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Organization (optional)</label>
+                                    <input type="text" class="form-input" placeholder="e.g. Restaurant or NGO name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Message</label>
+                                    <textarea rows="5" class="form-input" style="resize: vertical;" placeholder="How can we help you?"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary cta-btn" style="width: 100%; padding: 16px; font-size: 1.1rem; margin-top: 10px;">Send Message</button>
+                                
+                                <p style="text-align: center; color: var(--primary); font-size: 0.95rem; margin-top: 16px; font-weight: 500;">
+                                    Every message helps us move one step closer to reducing food waste and feeding more people.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Partner With Us Section -->
+                <section class="section-padding m-fade-up" style="background: var(--primary-light);">
+                    <div style="max-width: 800px; margin: 0 auto; text-align: center; padding: 0 20px;">
+                        <h2 style="font-size: 2.2rem; color: var(--text-main); margin-bottom: 24px; font-family: 'Plus Jakarta Sans', sans-serif;">Partner With Us</h2>
+                        <p style="font-size: 1.15rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
+                            If you represent a restaurant, hotel, college mess, or event management organization and want to donate surplus food through PlateRelay, we welcome your participation.
+                        </p>
+                        <p style="font-size: 1.25rem; color: var(--primary); font-weight: 600; line-height: 1.7;">
+                            Together, we can reduce food waste and help communities in need.
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+            
+            <!-- Footer -->
+            <footer class="site-footer m-fade-up" id="contact">
+                <div class="footer-grid">
+                    <div>
+                        <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.75rem; color: var(--text-main); margin-bottom: 8px;">PlateRelay</h2>
+                        <h3 style="font-size: 1rem; font-weight: 600; color: var(--primary); margin-bottom: 16px;">Connecting Surplus Food With Communities</h3>
+                        <p class="text-muted" style="max-width: 300px; line-height: 1.6;">PlateRelay is a technology platform designed to reduce food waste by connecting surplus food providers with NGOs in real time.</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <a href="index.html">Home</a>
+                        <a href="index.html#mission">How It Works</a>
+                        <a href="index.html#features">Features</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Legal</h4>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 PlateRelay</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+    
+    <script type="module" src="auth-check.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlateRelay - Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="brand cursor-pointer" onclick="window.location.href='index.html'">
+                <div class="brand-logo">P</div>
+                <span class="brand-text">PlateRelay</span>
+            </div>
+            <div class="nav-links">
+                <button class="nav-btn-link" onclick="window.location.href='index.html'">Home</button>
+                <button class="nav-btn-link" onclick="window.location.href='login.html'">Log In</button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="app">
+        <main class="view">
+            <div class="auth-container mt-12 slide-up">
+                <div class="auth-box">
+                    <div class="auth-header">
+                        <h2>Create an account</h2>
+                        <p class="text-muted mt-1">Join PlateRelay today</p>
+                    </div>
+
+                    <div id="auth-error" class="alert-error hidden"></div>
+
+                    <form id="register-form">
+                        <div class="form-group mb-4">
+                            <label>I am a...</label>
+                            <div class="role-selector">
+                                <label class="role-card">
+                                    <input type="radio" name="role" value="provider" id="role-provider" checked>
+                                    <div class="role-card-content">
+                                        <i class="fa-solid fa-utensils"></i>
+                                        <span>Food Provider</span>
+                                    </div>
+                                </label>
+                                <label class="role-card">
+                                    <input type="radio" name="role" value="ngo" id="role-ngo">
+                                    <div class="role-card-content">
+                                        <i class="fa-solid fa-handshake-angle"></i>
+                                        <span>NGO</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-4" id="provider-type-container">
+                            <label>Provider Type</label>
+                            <select id="reg-provider-type" class="w-full form-select" required>
+                                <option value="" disabled selected>Select Provider Type</option>
+                                <option value="College Mess">College Mess</option>
+                                <option value="Restaurant">Restaurant</option>
+                                <option value="Hotel">Hotel</option>
+                                <option value="Wedding Organizer">Wedding Organizer</option>
+                                <option value="Event Manager">Event Manager</option>
+                                <option value="Individual">Individual</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Organization Name</label>
+                            <input type="text" id="reg-name" required placeholder="e.g. Green Earth NGO">
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label>Email address</label>
+                            <input type="email" id="reg-email" required placeholder="you@example.com">
+                        </div>
+
+                        <div class="form-group mb-6">
+                            <label>Password</label>
+                            <input type="password" id="reg-password" required placeholder="••••••••" minlength="6">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-full" id="reg-submit-btn">Sign Up</button>
+                    </form>
+
+                    <div class="text-center mt-6">
+                        <p class="text-muted" style="font-size: 0.9rem;">Already have an account? <a href="login.html"
+                                class="text-primary" style="font-weight: 600; text-decoration: none;">Log In here</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="register.js"></script>
+</body>
+
+</html>

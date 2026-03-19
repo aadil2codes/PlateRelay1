@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlateRelay - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="landscaping.css">
+    <script src="motion.js"></script>
+</head>
+
+<body>
+    <nav id="navbar" class="landscaping-nav inverted">
+        <div class="nav-container">
+            <!-- Left: Logo -->
+            <div class="brand cursor-pointer" onclick="window.location.href='index.html'">
+                <div class="brand-logo" style="color: white; border-radius: 8px;">P</div>
+                <span class="brand-text">PlateRelay</span>
+            </div>
+            
+            <!-- Center: Links -->
+            <div class="desktop-links">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#mission" class="nav-link">About</a>
+                <a href="#features" class="nav-link">Services</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+
+            <!-- Right: CTA & Hamburger -->
+            <div class="nav-actions">
+                <a href="login.html" class="nav-link hidden md:block" style="margin-right: 12px;">Log In</a>
+                <button class="btn btn-primary cta-btn" onclick="window.location.href='register.html'">Sign Up</button>
+                <button class="hamburger" id="mobile-menu-btn" aria-label="Toggle menu">
+                    <span class="hamburger-line top"></span>
+                    <span class="hamburger-line middle"></span>
+                    <span class="hamburger-line bottom"></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-links">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#mission" class="nav-link">About</a>
+                <a href="#features" class="nav-link">Services</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="login.html" class="nav-link" style="margin-top: 12px;">Log In</a>
+                <button class="btn btn-primary cta-btn" style="display: block; margin-top: 12px; width: 100%; max-width: 250px;" onclick="window.location.href='register.html'">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="app">
+        <main style="padding: 0;">
+            <section class="hero slide-up parallax-hero m-fade-in" style="margin: 0; border-radius: 0; min-height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <div class="m-fade-up" style="transition-delay: 0.2s; text-align: center; z-index: 2;">
+                    <div class="hero-badge"><i class="fa-solid fa-seedling"></i> Crafting ecosystems</div>
+                    <h1 class="hero-title" style="color: white;">Crafting gardens,<br> cultivating dreams</h1>
+                    <p class="hero-subtitle">Turning surplus food and ordinary resources into beautiful, sustainable lifelines. Book a consultation or join the network today.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary btn-large" onclick="window.location.href='register.html'">Register</button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="view">
+                <!-- About / Mission Section -->
+                <section class="section-padding m-fade-up" id="mission">
+                    <div class="section-header">
+                        <h2>Our Mission</h2>
+                        <p>PlateRelay was built to solve a simple but powerful problem: while millions of people struggle with hunger, tons of edible food are wasted every day.<br><br>Our mission is to connect restaurants, college messes, hotels, and event organizers with nearby NGOs so surplus food can reach people who need it instead of being thrown away.<br><br>By using real-time technology and location-based coordination, PlateRelay transforms food waste into community support.</p>
+                    </div>
+                    <div class="about-grid m-stagger">
+                        <div class="about-card">
+                            <div class="about-icon"><i class="fa-solid fa-recycle"></i></div>
+                            <div class="about-content">
+                                <h3>Reducing Food Waste</h3>
+                                <p class="text-muted">PlateRelay helps reduce food waste by enabling providers to quickly post surplus food that would otherwise be discarded.</p>
+                            </div>
+                        </div>
+                        <div class="about-card">
+                            <div class="about-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                            <div class="about-content">
+                                <h3>Real-Time Coordination</h3>
+                                <p class="text-muted">NGOs receive instant updates when surplus food is posted and can accept pickups immediately.</p>
+                            </div>
+                        </div>
+                        <div class="about-card">
+                            <div class="about-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                            <div class="about-content">
+                                <h3>Community Impact</h3>
+                                <p class="text-muted">Every successful pickup helps feed communities and reduces the environmental impact of food waste.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- How PlateRelay Works Section wrapper -->
+                <section class="section-padding m-fade-up">
+                    <div class="section-header">
+                        <h2>How PlateRelay Works</h2>
+                        <p>A seamless platform connecting food providers directly to the people who need it most.</p>
+                    </div>
+
+                    <!-- Giving Food Animation ported into Services -->
+                    <div class="giving-animation-container m-fade-up" style="margin-bottom: 60px;">
+                        <div class="donor-side" style="color: var(--warning);">
+                            <i class="fa-solid fa-store"></i>
+                            <span class="anim-label">Provider</span>
+                        </div>
+
+                        <div class="food-package package-1">
+                            <i class="fa-solid fa-box-open text-accent" style="color: var(--warning);"></i>
+                            <i class="fa-solid fa-bowl-food food-item text-primary" style="color: var(--primary);"></i>
+                        </div>
+
+                        <div class="ngo-side text-primary" style="color: var(--primary);">
+                            <i class="fa-solid fa-handshake-angle"></i>
+                            <span class="anim-label">NGO</span>
+                        </div>
+
+                        <div class="food-package package-2">
+                            <i class="fa-solid fa-bag-shopping text-accent" style="color: var(--success);"></i>
+                            <i class="fa-solid fa-apple-whole food-item text-primary" style="color: var(--warning);"></i>
+                        </div>
+
+                        <div class="recipient-side" style="color: var(--danger);">
+                            <i class="fa-solid fa-hands-holding-child"></i>
+                            <span class="anim-label">Needy</span>
+                        </div>
+                    </div>
+
+                    <div class="services-grid m-stagger" style="margin-bottom: 80px;">
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fa-solid fa-store"></i></div>
+                            <h3>Food Providers</h3>
+                            <p>Restaurants, hotels, messes, and event organizers can post surplus food within seconds using a simple dashboard.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                            <h3>NGOs</h3>
+                            <p>NGOs can view available food listings nearby and accept pickup requests instantly.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fa-solid fa-globe"></i></div>
+                            <h3>Community Impact</h3>
+                            <p>Once food is collected, it is distributed to people who need it, ensuring edible food is never wasted.</p>
+                        </div>
+                    </div>
+
+                    <div class="section-header" id="features">
+                        <h2>Platform Features</h2>
+                    </div>
+
+                    <div class="services-grid features-grid m-stagger">
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
+                            <h3>Real-Time Tracking</h3>
+                            <p>Food listings appear instantly on the platform. Once an NGO accepts a pickup, the listing is automatically updated to prevent duplicate claims.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+                            <h3>Simple Food Posting</h3>
+                            <p>Food providers can quickly post surplus food by entering details like quantity, location, and pickup time.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                            <h3>Verified Participants</h3>
+                            <p>The platform uses authentication and role management to ensure only registered NGOs and food providers can participate.</p>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                            <h3>Location-Based Discovery</h3>
+                            <p>Using map integration, NGOs can easily locate nearby food providers and plan pickups efficiently.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section class="section-padding m-fade-up">
+                    <div class="section-header">
+                        <h2>Frequently Asked Questions</h2>
+                        <p>Got questions? We've got answers.</p>
+                    </div>
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <button class="faq-question">Who can post surplus food?<i class="fa-solid fa-plus faq-icon"></i></button>
+                            <div class="faq-answer">
+                                Restaurants, hotels, college messes, and event organizers can post surplus food that is safe for consumption.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">Who can collect the food?<i class="fa-solid fa-plus faq-icon"></i></button>
+                            <div class="faq-answer">
+                                Verified NGOs and volunteer organizations registered on the platform can accept pickup requests.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">How do NGOs know where food is available?<i class="fa-solid fa-plus faq-icon"></i></button>
+                            <div class="faq-answer">
+                                PlateRelay shows food listings in real time along with location and contact details of the provider.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question">What happens after food is collected?<i class="fa-solid fa-plus faq-icon"></i></button>
+                            <div class="faq-answer">
+                                The NGO confirms pickup in the system, ensuring transparency and accurate tracking of food donations.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Potential Impact Section -->
+                <section class="section-padding m-fade-up">
+                    <div class="section-header text-center">
+                        <h2>Potential Impact</h2>
+                        <p>PlateRelay can create meaningful social impact.</p>
+                    </div>
+                    <div style="max-width: 800px; margin: 0 auto; padding: 40px; background-color: var(--surface); border-radius: 20px; box-shadow: 0 8px 30px rgba(35, 139, 69, 0.08); border: 1px solid var(--border); text-align: center;">
+                        <p style="font-size: 1.25rem; font-weight: 500; margin-bottom: 24px; color: var(--text-main);">If 50 restaurants donate just 10 kg of surplus food daily, that equals:</p>
+                        <h3 style="font-size: 2.5rem; color: var(--primary); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; margin-bottom: 16px;">500 kg of food saved every day</h3>
+                        <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 32px; font-style: italic;">Enough to feed hundreds of people daily.</p>
+                        <p style="font-size: 1.1rem; border-top: 1px solid var(--border); padding-top: 24px; color: var(--text-muted);">PlateRelay aims to build a network where surplus food is redistributed efficiently instead of wasted.</p>
+                    </div>
+                </section>
+
+                <!-- Blog Section -->
+                <section class="section-padding m-fade-up" id="blog">
+                    <div class="section-header">
+                        <h2>Food Waste Awareness</h2>
+                        <p>Insights on reducing waste and improving food security.</p>
+                    </div>
+                    <div class="blog-grid m-stagger">
+                        <div class="blog-card" style="padding: 24px;">
+                            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; margin-bottom: 12px; color: var(--text-main);">Why Food Waste Is a Global Problem</h3>
+                            <p style="color: var(--text-muted); line-height: 1.6;">Food waste contributes to hunger, environmental damage, and economic loss. Understanding the scale of the problem is the first step toward solving it.</p>
+                        </div>
+                        <div class="blog-card" style="padding: 24px;">
+                            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; margin-bottom: 12px; color: var(--text-main);">How Technology Can Reduce Food Waste</h3>
+                            <p style="color: var(--text-muted); line-height: 1.6;">Digital platforms can help connect surplus food sources with organizations that distribute food to those in need.</p>
+                        </div>
+                        <div class="blog-card" style="padding: 24px;">
+                            <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.25rem; margin-bottom: 12px; color: var(--text-main);">How Communities Can Help</h3>
+                            <p style="color: var(--text-muted); line-height: 1.6;">Simple actions from restaurants, event organizers, and individuals can significantly reduce food waste and support local communities.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Footer -->
+            <footer class="site-footer m-fade-up" id="contact">
+                <div class="footer-grid">
+                    <div>
+                        <h2 style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 1.75rem; color: var(--text-main); margin-bottom: 8px;">PlateRelay</h2>
+                        <h3 style="font-size: 1rem; font-weight: 600; color: var(--primary); margin-bottom: 16px;">Connecting Surplus Food With Communities</h3>
+                        <p class="text-muted" style="max-width: 300px; line-height: 1.6;">PlateRelay is a technology platform designed to reduce food waste by connecting surplus food providers with NGOs in real time.</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <a href="#">Home</a>
+                        <a href="#mission">How It Works</a>
+                        <a href="#features">Features</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Legal</h4>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 PlateRelay</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+    
+    <!-- Retained Vanilla JS Backend Firebase check -->
+    <script type="module" src="auth-check.js"></script>
+</body>
+
+</html>
